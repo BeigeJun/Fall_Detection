@@ -102,7 +102,7 @@ def main():
             print(f"Epoch [{epoch+1}/{EPOCHS}] Loss: {train_loss/len(train_loader):.4f} | Val Loss: {val_loss/len(val_loader):.4f} | Acc: {accuracy:.2f}%")
 
     os.makedirs('models', exist_ok=True)
-    torch.save(model.state_dict(), 'models/fall_lstm_pytorch.pth')
+    torch.save(model.state_dict(), 'C:/Pycharm_Program/Fall_Detection/models/fall_lstm_pytorch.pth')
 
 if __name__ == "__main__":
     main()

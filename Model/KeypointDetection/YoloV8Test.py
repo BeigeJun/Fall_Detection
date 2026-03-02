@@ -2,7 +2,9 @@ import cv2
 from ultralytics import YOLO
 
 model = YOLO('yolov8n-pose.pt')
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture('D:/3.Fall_Detection_DATA/1.Pos_Video_Save/Cutting_Fall_Video/clip_1.avi')
+fps = cap.get(cv2.CAP_PROP_FPS)
+delay = int(1000 / fps) if fps > 0 else 33
 
 while cap.isOpened():
     success, frame = cap.read()
@@ -31,7 +33,7 @@ while cap.isOpened():
 
     cv2.imshow("Fall Detection", frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(delay) & 0xFF == ord('q'):
         break
 
 cap.release()

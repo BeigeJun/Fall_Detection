@@ -24,7 +24,7 @@ class FallLSTM(nn.Module):
         return out
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-MODEL_PATH = 'models/fall_lstm_pytorch.pth'
+MODEL_PATH = 'C:/Pycharm_Program/Fall_Detection/models/fall_lstm_pytorch.pth'
 YOLO_MODEL = YOLO('yolov8n-pose.pt')
 
 model = FallLSTM().to(DEVICE)
